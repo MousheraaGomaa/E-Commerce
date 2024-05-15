@@ -1,0 +1,64 @@
+<mat-sidenav-container hasBackdrop="true" class="bg-white">
+  <mat-sidenav #sidenav mode="over" >
+    <mat-nav-list>
+      <a routerLink="/" mat-list-item>
+        <i class="fa-solid fa-house col-2"></i>
+        <span>Home</span>
+      </a>
+      <a routerLink="/aboutUs" mat-list-item>
+        <i class="fa-solid fa-users col-2"></i>
+        <span>About us</span>
+      </a>
+      <a  routerLink="/contactUs" mat-list-item>
+        <i class="fa-solid fa-envelope col-2"></i>
+        <span>Contact us</span>
+      </a>
+      <a routerLink="/help" mat-list-item>
+        <i class="fa-regular fa-circle-question col-2"></i>
+        <span>Help</span>
+      </a>
+      <a routerLink="/products" mat-list-item>
+        <i class="fa-regular fa-shop col-2"></i>
+        <span>Shop</span>
+      </a>
+      <div mat-list-item class="tools"> 
+        <a routerLink="/profile">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <a routerLink="/favorites">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <a routerLink="/cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </div>
+      <div class="connectus">
+        <a href="https://www.youtube.com" class="rounded-circle" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com" class="rounded-circle" target="_blank">
+            <i class="fa-brands fa-facebook-f" ></i>
+        </a>
+        <a href="https://www.twitter.com" class="rounded-circle" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com" class="rounded-circle" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com" class="rounded-circle border-info" target="_blank" >
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="min-height:100vh ;">
+        <app-header (toggleEvent)="toggle(sidenav)"></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<button class="button-up"  [hidden]="!showUpButton" (click)="scrollToTop()">
+  <i class="fa-solid fa-arrow-up" style="color: #ffffff;"></i>
+</button>

@@ -1,0 +1,62 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+.cart,.view{
+    cursor: pointer;
+}
+
+.produdct{
+    height: 360px;
+    position: relative;
+}
+.produdct .content .actions-section
+{
+    color: white;
+    position:absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 10;
+}
+.content .actions-section .cart,
+.content .actions-section .view,
+.content .actions-section .fav-container
+{   margin-bottom: 10px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff9f00cc;
+}
+.img-section{
+    height:200px;
+    overflow: hidden;
+}
+.img-section img{
+    object-fit:contain;
+    transition: all 1.1s ;
+}
+.img-section img:hover{
+    transform: scale(1.2);
+}
+
+.produdct  .content:hover>.actions-section{
+    display: block !important;
+}
+.produdct .content .details-section>span{
+    overflow-y: hidden;
+    display: inline-block;
+    height: 47px;
+}
+.produdct .content .details-section>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* .produdct .content .section1,
+.produdct .content .section2,                    add animatoin when disply section  
+.produdct .content .fav-container{
+    transition: 3.1s ease ;
+} */

@@ -1,0 +1,105 @@
+<div class="payment">
+    <div class="payment-content col-10 py-4">
+        <div class="title px-4">
+            <i class="fa-solid fa-cart-shopping me-4"></i>
+            <span>Shopping Cart</span>
+        </div>
+        <hr/>
+        <div class="details d-flex flex-wrap">
+           <div class="col-12  col-lg-7 px-4  mb-4">
+            <div class="payment-details">
+                <span class="fs-3">Payment Details</span>
+                <div class="payment-method d-flex flex-wrap my-4">
+                    <div class="credit-card  col-10  col-md-5" (click)="click('credit')">
+                        <i class="icon me-3 fa-regular fa-credit-card" style="color: #000000;"></i>
+                        <span class="flex-grow-1">Credit Card</span>
+                        <input type="radio" name="paymentMethod" value="credit"  [(ngModel)]="paymentMethod" />
+                    </div>
+                         <!-- *ngClass="'border-color'" -->
+                    <div class="paypal col-10 col-md-5" (click)="click('paypal')" >
+                        <i class="icon me-3  fa-brands fa-paypal" style="color: #000000;"></i>
+                        <span class="flex-grow-1">PayPal</span>
+                        <input type="radio"  name="paymentMethod" value="paypal" [(ngModel)]="paymentMethod"/>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label>Card holder Name</label>
+                    <input class="form-control text-center mt-1" type="text" />
+                </div>
+                <div class="form-group mt-3 ">
+                    <label >Card Number</label>
+                    <input class="form-control text-center mt-1" type="text" />
+                </div>
+                <div class="d-flex flex-wrap gap-2 my-3">
+                    <div class="col-12 col-sm-5">
+                        <label>Expiration date</label>
+                        <div class="d-flex gap-2 mt-2">
+                            <input class="form-control text-center" placeholder="dd"  type="number"/>
+                            <span class="text-center fs-4">/</span>
+                            <input class="form-control text-center" placeholder="mm"  type="number" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 flex-grow-1">
+                        <label for="cvv">Cvv</label>
+                        <input class="form-control text-center mt-2"  id="cvv" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="actions pt-sm-4 px-4">
+                <button class="btn btn-outline-primary col fs-5" [disabled]="cartData.products.length?false:true" (click)="pay()">Pay   {{getTotalPrice()|currency:'USD'}}</button>
+                <a routerLink="/products" class="text-black fs-4 ms-4 " >Shop now</a>
+            </div>
+           </div>
+            <div class="order-summary col-12 col-lg-5 px-4">
+                <span class="fs-3">Order Summary</span>
+                <div class="products mt-4" *ngIf="cartData.products.length">
+                    <div class="product d-flex align-items-center  gap-1  mb-4" *ngFor="let item of cartData.products ; let i=index">
+                        <div  class="col-3 text-start">
+                           <img src="{{item.thumbnail}}" />
+                        </div>
+                        <div class="col-8">
+                            <span class="product-title">{{item.title}}</span>
+                            <i class="fa-solid fa-square-plus fs-4" (click)="increment(i)"></i>
+                            <span class="mx-2 fs-5">{{item.qty}}</span>
+                            <i class="fa-solid fa-square-minus fs-4 " (click)="decrement(i)"></i>
+                        </div>
+                        <i class="fa-solid fa-close fs-5" (click)="remove(item.id)" ></i>
+                    </div>
+                </div>
+                <div class="no-products mt-2 text-center" *ngIf="!cartData.products.length">
+                    <img src="assets/images/cart/girl-empty-cart.png"/>
+                    <p class="text-danger">
+                        Oh! Your shopping cart appears to be empty
+                        <br/>
+                        Try to see new products 
+                    </p>
+                    <a class="btn btn-outline-danger mt-4 w-50" routerLink="/products">Shop Now</a>
+                </div>
+                <hr/>
+                <div class="price-summary">
+                    <div class="d-flex">
+                        <span>Subtotal</span>
+                        <span>{{ cartData.totalPrice|currency:'USD'}}</span>
+                    </div>
+                    <div class="d-flex">
+                        <span>Tax</span>
+                        <span>{{tax|currency:'USD'}}</span>
+                    </div>
+                    <div class="d-flex">
+                        <span>Shipping</span>
+                        <span>{{shipping|currency:'USD'}}</span>
+                    </div>
+                    <div class="d-flex">
+                        <span><b>Total</b></span>
+                        <span><b>{{getTotalPrice()|currency:'USD'}}</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+<!-- <button (click)="chg()">gggg</button> -->
+<!-- <ngb-toast *ngIf="show" header="Hello" [autohide]="false" (hidden)="show=false">
+    I am a simple static toast with a header.
+</ngb-toast> -->
+<!-- <ngb-toast [autohide]="false"> I am a simple static toast. </ngb-toast> -->

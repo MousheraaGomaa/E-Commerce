@@ -1,0 +1,39 @@
+<div>
+    <div class="products-head">
+        <h2 class="title col-4">Products</h2>
+    </div>
+    <div class="products-section">
+        <div class="products-toolbar d-flex align-items-center justify-content-space-between container">
+            <div class="col-12 col-md-6">
+                <app-select title="Sort" [value]="selectedSortField" [data]="sortFields"
+                    (getSelected)="changeSelected($event)"></app-select>
+            </div>
+            <div class="col-12 col-md-4 d-flex align-items-center">
+                <div class="filter  me-4 d-lg-none" (click)="openDialog()">
+                    <img width="20" height="20" src="assets/images/filter/filter.png" alt="filter" class="me-1" />
+                    <label>Filters</label>
+                </div>
+                <button type="button" class="btn btn-outline-secondary" (click)="clear()">Clear</button>
+            </div>
+        </div>
+        <hr />
+        <div class="products container d-flex">
+            <div class="d-none d-lg-block h-100">
+                <app-filter-sidebar></app-filter-sidebar>
+            </div>
+            <ng-container *ngIf="productsLoaded; else loadingSpinner">
+                <div class="d-flex flex-wrap justify-content-center justify-content-sm-start  flex-grow-1 ">
+                    <div class="col-11 col-sm-6 col-lg-4"
+                        *ngFor="let product of products|filterCategory:categories:selectedCategories|filterPrice:minPrice:maxPrice|filterAvailability:selectedAvailable|sort:selectedSortField">
+                        <app-product-card [product]="product"></app-product-card>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #loadingSpinner>
+                <div class="w-100 d-flex  justify-content-center align-items-center">
+                    <app-spinner></app-spinner>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

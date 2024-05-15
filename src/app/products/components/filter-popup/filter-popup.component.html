@@ -1,0 +1,52 @@
+<div class="popup-container p-4 rounded-4">
+    <div   class="products-filter d-flex justify-content-center justify-content-sm-start">
+        <div class="available-section mb-2">
+            <a href="#available" data-bs-toggle="collapse">
+                <span>Availability</span>
+                <i class="fa-solid fa-angle-down angle-icon" style="color:#000;"></i>
+            </a>
+            <ul class="collapse" id="available">
+                <li *ngFor="let checkboxInfo of checkboxAvailable">
+                    <input type="checkbox" id="{{checkboxInfo.label}}2" name="availability" [(ngModel)]="checkboxInfo.checked"  class="me-2" />
+                    <label for="{{checkboxInfo.label}}2">{{checkboxInfo.label}}</label>
+                </li>
+            </ul>
+        </div>
+        <div class="category-section mb-2">
+            <a href="#category" data-bs-toggle="collapse" >
+                <span>Categories </span>
+                <i class="fa-solid fa-angle-down angle-icon" style="color: #000;"></i>
+            </a>
+            <ul class="collapse " id="category">
+                <li *ngFor="let checkboxInfo of checkboxCategory">
+                    <input type="checkbox"  id="{{checkboxInfo.label+2}}" [(ngModel)]="checkboxInfo.checked" name="category" class=" me-2"  />
+                    <label for="{{checkboxInfo.label+2}}">{{checkboxInfo.label}}</label>
+                </li>
+            </ul>
+        </div>
+        <div class="price-section  ">
+            <a href="#price" data-bs-toggle="collapse"   >
+                <span>Price</span>
+                <i class="fa-solid fa-angle-down angle-icon"  style="color: #000;"></i>
+            </a>
+            <ul class="collapse " id="price">
+                <li>
+                    <span>min</span>      
+                    <div class="price-container"> 
+                        <input type="number" placeholder="0" class="mx-2" [(ngModel)] ="price.minPrice" />
+                    </div>
+                    <span>max</span>  
+                    <div class="price-container">                               <!-- to get ts <==> html and get  -->
+                        <input type="number" placeholder="+1000" class="mx-2" [(ngModel)]="price.maxPrice" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="actions d-flex justify-content-center  justify-content-sm-end ">
+        <button class="btn btn-outline-primary col-8 col-sm-3 col-lg-2" (click)="clear()" >Clear</button>
+        <button class="btn btn-outline-primary col-8 col-sm-3 col-lg-2" (click)="close()" >Cancel</button>
+        <button class="btn btn-outline-primary col-8 col-sm-3 col-lg-2 " (click)="apply()" >Apply</button>
+    </div>
+</div>
+

@@ -1,0 +1,65 @@
+
+mat-sidenav-container mat-sidenav{
+  width: 250px;
+  padding:35px 25px;
+  background-color: white;
+}
+mat-nav-list , a {
+  padding: 0px;
+}
+mat-nav-list  a{
+  color:black;
+  text-decoration: none;
+}
+mat-nav-list>a{
+  padding:10px;
+}
+mat-nav-list>a i{
+  font-size: 13px ;
+}
+
+mat-nav-list>a:hover{
+  border: 1px solid rgb(100, 6, 250);
+  border-radius: 12px;
+  color:rgb(100, 6, 250);
+  font-weight: 500;
+}
+
+mat-nav-list .tools{
+  padding:30px 0px;
+}
+mat-nav-list .tools a, mat-nav-list .connectus a{
+  margin: 0px 5px;
+}
+mat-nav-list .connectus a{
+  background-color: #F4EDE7;
+  display: inline-block;
+  font-size: 12px;
+}
+mat-nav-list .connectus a i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+} 
+mat-nav-list .connectus a:hover{
+ color: white;
+ background-color:black;
+}
+
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(53, 53, 53, 0.44);
+}
+
+.button-up{
+  position: fixed;
+  bottom:40px;
+  right:40px;
+  z-index: 10;
+  background-color:#F8796C ;
+  font-size: 30px;
+  border: none;
+  width: 60px;
+  height: 60px;
+}

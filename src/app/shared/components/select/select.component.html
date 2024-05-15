@@ -1,0 +1,7 @@
+<div class="d-flex align-items-center">
+    <span class="me-2">{{title}}</span>
+    <select class="form-select form-select-lg mb-3" [(ngModel)]="value" (change)="chageSelected($event)">
+        <option value="none" selected disabled hidden class="text-secondry">Choose</option>
+        <option *ngFor="let option of data" [value]="option">{{option}}</option>
+    </select>
+</div>

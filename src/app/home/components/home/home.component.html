@@ -1,0 +1,19 @@
+<app-slider></app-slider>
+<app-slick-list></app-slick-list>
+<div class="products-container container">
+    <h2>shop now</h2>
+    <div class="sub-title">
+       <img src="assets/images/slider/title-decor-left.png"/>
+       <h3>Shop our best sellers</h3>
+       <img src="assets/images/slider/title-decor-right.png"/>
+    </div>
+    <!-- products -->
+    <div class="products d-flex  flex-wrap justify-content-center">
+       <div class="single-product col-11 col-sm-6  col-md-4  col-lg-3"  *ngFor="let item of products">
+          <app-product-card   [product]="item"></app-product-card>
+       </div>
+    </div>
+    <div class="text-end mb-4" >
+       <a routerLink="/products">Shop Now</a>
+    </div>
+ </div>

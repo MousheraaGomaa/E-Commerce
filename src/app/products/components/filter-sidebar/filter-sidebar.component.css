@@ -1,0 +1,56 @@
+.products-filter{
+    width: 320px;
+    color: #909088;
+    padding: 30px;
+    position:relative;
+}
+.angle-icon{
+    position: absolute;
+    right: 20px;
+}
+.products-filter a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-family: Marcellus;
+}
+.price-container{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid rgb(158, 158, 158);
+}
+.price-container:hover{
+    border-color: rgb(188, 188, 250);
+    
+}
+.price-container::after,.price-container::before{
+    color: black;
+    font-size: 18px;
+    font-weight: 600px;
+}
+.price-container::before{
+    content:"$";
+}
+.price-container::after{
+    content:"USD";
+}
+.price-container input,.price-container input:focus{
+    outline: none;
+    border: none;
+}
+ul{
+    padding-left: 10px;
+}
+li{
+    list-style: none;
+}
+.products-content{
+    display: flex;
+    flex-wrap:wrap
+}
+a{
+    display: inline-block;
+    width: 100% ;
+}

@@ -1,0 +1,68 @@
+ul{
+    padding-left: 10px;
+}
+.products-filter{
+    padding:20px;
+    color: #909088;
+    flex-wrap: wrap;
+    gap:40px;
+    /* background-color:; */
+}
+.available-section,.category-section,.price-section{
+    position:relative;
+    width: 300px;
+}
+.angle-icon{
+    position: absolute;
+    right: 0px;
+    margin-top: 7px;
+}
+.products-filter a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-family: Marcellus;
+}
+.price-container{
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid rgb(158, 158, 158);
+}
+.price-container:hover{
+    border-color: rgb(188, 188, 250);
+    
+}
+.price-container::after,.price-container::before{
+    color: black;
+    font-size: 18px;
+    font-weight: 600px;
+}
+.price-container::before{
+    content:"$";
+}
+.price-container::after{
+    content:"USD";
+}
+.price-container input,.price-container input:focus{
+    outline: none;
+    border: none;
+}
+.price-container input{
+    width:60%;
+    margin: 0px;
+}
+li{
+    list-style: none;
+}
+
+a{
+    display: inline-block;
+    width: 100% ;
+}
+.actions{
+    justify-content:end;
+    gap: 20px;
+    flex-wrap: wrap;
+}

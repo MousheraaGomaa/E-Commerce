@@ -1,0 +1,32 @@
+ul{
+    padding-left: 10px;
+}
+.products-head{
+    padding-top: 30px;
+    height: 350px;
+    background:#f6f6f6 url("../../../../assets/images/products/shoping-3.png") no-repeat scroll 70% center / contain;
+}
+.products-head h2{
+    text-align:center;
+    font-size: 40px;
+    font-family: 'Vollkorn', serif;
+}
+.products-toolbar{
+    flex-wrap: wrap;
+}
+.products-toolbar button{
+    width: 150px;
+}
+.products-toolbar .filter{
+    cursor:pointer
+}
+.products-toolbar .filter label{
+    font-size: 20px;
+}
+/* .products-content{
+    display: flex;
+    flex-wrap:wrap
+} */
+
+
+

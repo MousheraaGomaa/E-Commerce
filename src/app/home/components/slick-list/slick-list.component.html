@@ -1,0 +1,21 @@
+<div class="slick-div">
+    <h2>Just for you</h2>
+    <div class="sub-title">
+      <img src="assets/images/slider/title-decor-left.png"/>
+      <h3>some categories</h3>
+      <img src="assets/images/slider/title-decor-right.png"/>
+    </div>
+    <!-- mx-2 -->
+    <ngx-slick-carousel class="carousel mt-4 ms-2 me-2" 
+        #slickModal="slick-carousel"                        
+        [config]="slideConfig" >
+        <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide">
+          <a routerLink="/products" [queryParams]="{'category':i+1}">
+            <img src="{{slidesImages[i] }}" alt="" class="mt-2" >
+          </a>
+          <div class="content mt-2">
+            <h4>{{slide}}</h4>
+          </div>
+        </div>
+    </ngx-slick-carousel>
+</div>

@@ -1,0 +1,42 @@
+.slick-div{
+    margin-top: 50px;
+}
+.carousel{
+    display: flex;
+    margin:0px auto;
+    height: 250px;
+}
+h2{
+    font-family: Rouge;
+    color: #88B2A9;
+    font-size: 50px;
+    text-align: center;
+}
+.sub-title {
+
+    display: flex;
+    justify-content: center;
+}
+.sub-title h3 {
+    font-family: Rouge;
+    margin: 0px 5px;
+    font-size: 40px;
+}
+.sub-title img {
+    height: 20px;
+    align-self: center;
+}
+
+.slide{
+    padding:0px 15px;
+}
+.slide img{
+    height: 80%;
+    width: 100%;
+    object-fit: cover; 
+    border: 2px solid ghostwhite; 
+    box-shadow: 0px 0px 10px rgb(121, 120, 120);
+}
+.slide img:hover{
+    zoom:2;
+}

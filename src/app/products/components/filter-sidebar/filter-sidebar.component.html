@@ -1,0 +1,45 @@
+
+<div class="products-filter">
+    <div class="available-section">
+        <a href="#available-sidemenu" data-bs-toggle="collapse" >
+            <span>Availability</span>
+            <i class="fa-solid fa-angle-down angle-icon" style="color: #000;"></i>
+        </a>
+        <ul class="collapse " id="available-sidemenu">
+            <li *ngFor="let checkboxInfo of checkboxAvailable">
+                <input type="checkbox" id="{{checkboxInfo.label}}" name="availability" [(ngModel)]="checkboxInfo.checked" (change)="onchange()" class="me-2" />
+                <label for="{{checkboxInfo.label}}">{{checkboxInfo.label}}</label>
+            </li>
+        </ul>
+    </div>
+    <div class="category-section mt-2 ">
+        <a href="#category-sidemenu" data-bs-toggle="collapse" >
+            <span>Categories </span>
+            <i class="fa-solid fa-angle-down angle-icon" style="color: #000;"></i>
+        </a>
+        <ul class="collapse " id="category-sidemenu">
+            <li *ngFor="let checkboxInfo of checkboxCategory">
+                <input type="checkbox"  id="{{checkboxInfo.label}}" [(ngModel)]="checkboxInfo.checked"  name="category" class=" me-2" (change)="onchange()">
+                <label for="{{checkboxInfo.label}}">{{checkboxInfo.label}}</label>
+            </li>
+        </ul>
+    </div>
+    <div class="price-section mt-2">
+        <a href="#price-sidemenu" data-bs-toggle="collapse" >
+            <span>Price</span>
+            <i class="fa-solid fa-angle-down angle-icon"  style="color: #000;"></i>
+        </a>
+        <ul class="collapse " id="price-sidemenu">
+            <li>
+                <span>min</span>      
+                <div class="price-container"> 
+                    <input type="number" placeholder="0" class="mx-2" [(ngModel)] ="price['minPrice']" name="minPrice" (input)="onchange()"/>
+                </div>
+                <span>max</span>  
+                <div class="price-container">                               <!-- to get ts <==> html and get -->
+                    <input type="number" placeholder="+1000" class="mx-2" [(ngModel)]="price['maxPrice']" name="maxPrice" (input)="onchange()"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

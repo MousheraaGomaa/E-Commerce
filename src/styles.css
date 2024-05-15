@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Rouge;
+    src: url('./fonts/Rouge/RougeScript-Regular.ttf');
+}
+
+body{
+    margin: 0px;
+    height: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Marcellus,Arial,Helvetica,sans-serif;
+}
+h3{
+    font-family:Marcellus;
+}
+
+.slick-arrow{
+    margin: auto;
+    width: 24px;
+    height: 24px;
+}
+.next,.prev{
+    font-size: 20px;
+}
+.next{
+    margin-left: 10px;
+}
+.prev{
+    margin-right: 10px;
+}
+.slick-track,.slick-list{
+    height:100%;
+}
+
+
+
+/* ::ng-deep .my-custom-panel{
+    width: 100%; 
+}
+.dialog-focus .mat-dialog-container{
+    z-index: 1000 !important;
+    background-color: aquamarine !important;
+    color: goldenrod;
+} */

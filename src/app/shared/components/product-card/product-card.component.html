@@ -1,0 +1,38 @@
+<div class="produdct p-4">
+    <div class="content shadow p-2  w-100 h-100 rounded-4 ">
+        <div class="img-section">
+            <img class="w-100 h-100 mb-4  rounded-top-4" src='{{product.thumbnail}} '/>
+        </div>
+        <div class="details-section">
+            <span class="my-2">{{product.title }}</span> 
+            <div>
+                <span><b>{{product.price|currency:"USD"}}</b></span>
+                <div class="rate">
+                    <i class="fa-solid fa-star  me-1" style="color: #fad900;"></i>
+                    <span><b>{{product.rating}}</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="actions-section d-none mt-2 fs-5"> 
+            <div class="fav-container rounded-circle">
+                <input type="checkbox" id="{{product.id}}fav-icon" [(ngModel)]="favorite" class="d-none"/>
+                <label *ngIf="favorite" for="{{product.id}}fav-icon" (click)="removeFromFavorites()" ><i  class="fa-solid fa-heart" ></i></label> 
+                <label *ngIf="!favorite" for="{{product.id}}fav-icon"  (click)="addToFavorites()" ><i  class="fa-regular fa-heart"></i></label>
+            </div>
+            <div class="cart rounded-circle">
+                <i class="fa-solid fa-cart-plus" (click)="addToCart()"></i>
+            </div>
+            <div class="view rounded-circle">
+                <a routerLink="/{{product.category}}/product/{{product.id}}">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- <div class="fav-container d-none">
+            <input type="checkbox" id="{{product.id}}fav-icon" [(ngModel)]="favorite" class="d-none"/>
+            <label *ngIf="favorite" for="{{product.id}}fav-icon" class="fs-4" (click)="removeFromFavorites()" ><i  class="fa-solid fa-heart" style="color: #f20202;"></i></label> 
+            <label *ngIf="!favorite" for="{{product.id}}fav-icon" class="fs-4" (click)="addToFavorites()" ><i  class="fa-regular fa-heart" style="color: #f20202;"></i></label>
+        </div> -->

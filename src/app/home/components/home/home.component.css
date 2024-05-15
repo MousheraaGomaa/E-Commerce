@@ -1,0 +1,32 @@
+.products-container{
+    margin-top: 50px;
+}
+h2{
+    font-family: Rouge;
+    color: #88B2A9;
+    font-size: 50px;
+    text-align: center;
+}
+.sub-title {
+    display: flex;
+    justify-content: center;
+}
+.sub-title h3 {
+    font-family: Rouge;
+    margin: 0px 5px;
+    font-size: 40px;
+    text-align: center;
+}
+.sub-title img {
+    height: 20px;
+    align-self: center;
+}
+a{
+    text-decoration: none;
+    color:white;
+    display: inline-block;
+    padding:10px 50px;
+    border-radius: 10px;
+    background-color: #88B2A9;
+    font-size: 25px;
+}
